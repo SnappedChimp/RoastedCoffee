@@ -1,0 +1,11 @@
+{
+  "name": "roasted-coffee-site",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i ./css/tailwind.css -o ./css/style.css --minify"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.13",
+    "tailwindcss": "^4.1.13"
+  }
+}

@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Свіжо обсмажена кава з чесним характером. Знайдіть своє зерно та рецепт для дому.">
+    <meta name="theme-color" content="#F5F0EB">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Смажена кава — кава для вашого щоденного ритуалу</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        html { scroll-behavior: smooth; scroll-padding-top: 7rem; }
+        @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    </style>
+</head>
+<body class="min-h-screen overflow-x-hidden bg-[#F5F0EB] font-['Inter',sans-serif] text-[#25241F] antialiased">
+    <header class="sticky top-0 z-50 mx-auto w-full max-w-[1440px] px-0 pt-0 sm:top-4 sm:px-4">
+        <div class="mx-auto max-w-[1360px] rounded-b-[30px] bg-white shadow-sm sm:rounded-full">
+            <div class="flex min-h-20 items-center justify-between gap-3 px-5 py-3 sm:min-h-[88px] sm:px-8 lg:px-10">
+                <a class="inline-flex min-h-12 shrink-0 items-center gap-2 rounded-full text-[#25241F] transition-colors duration-200 ease-out hover:text-[#3F5C3A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E] focus-visible:ring-offset-2 focus-visible:ring-offset-white sm:gap-3" href="#home" aria-label="Смажена кава — головна">
+                    <img class="h-10 w-10 object-contain sm:h-12 sm:w-12" src="assets/images/roasted_coffee_vector_logo.svg" alt="">
+                    <span class="text-base font-bold sm:text-xl">Смажена кава</span>
+                </a>
+                <nav class="hidden items-center gap-4 text-[15px] font-medium text-[#25241F] lg:flex xl:gap-6" aria-label="Головна навігація">
+                    <a class="inline-flex min-h-12 items-center transition-colors duration-200 ease-out hover:text-[#3F5C3A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E] focus-visible:ring-offset-2 focus-visible:ring-offset-white" href="#home" aria-current="page">Головна</a>
+                    <a class="inline-flex min-h-12 items-center transition-colors duration-200 ease-out hover:text-[#3F5C3A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E] focus-visible:ring-offset-2 focus-visible:ring-offset-white" href="#catalog">Каталог</a>
+                    <a class="inline-flex min-h-12 items-center transition-colors duration-200 ease-out hover:text-[#3F5C3A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E] focus-visible:ring-offset-2 focus-visible:ring-offset-white" href="#about">Про нас</a>
+                    <a class="inline-flex min-h-12 items-center transition-colors duration-200 ease-out hover:text-[#3F5C3A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E] focus-visible:ring-offset-2 focus-visible:ring-offset-white" href="#contacts">Контакти</a>
+                    <a class="inline-flex min-h-12 items-center transition-colors duration-200 ease-out hover:text-[#3F5C3A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E] focus-visible:ring-offset-2 focus-visible:ring-offset-white" href="#blog">Блог</a>
+                    <a class="inline-flex min-h-12 items-center transition-colors duration-200 ease-out hover:text-[#3F5C3A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E] focus-visible:ring-offset-2 focus-visible:ring-offset-white" href="#services">Послуги</a>
+                    <a class="inline-flex min-h-12 items-center transition-colors duration-200 ease-out hover:text-[#3F5C3A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E] focus-visible:ring-offset-2 focus-visible:ring-offset-white" href="#constructor">Конструктор</a>
+                    <a class="inline-flex min-h-12 items-center transition-colors duration-200 ease-out hover:text-[#3F5C3A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E] focus-visible:ring-offset-2 focus-visible:ring-offset-white" href="#atmosphere">Атмосфера</a>
+                </nav>
+                <a class="hidden min-h-12 shrink-0 items-center justify-center rounded-full bg-[#324A2E] px-6 text-sm font-semibold text-white transition-all duration-200 ease-out hover:bg-[#3F5C3A] hover:underline hover:underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#324A2E] active:bg-[#253923] active:shadow-inner lg:inline-flex" href="#catalog">Переглянути каву</a>
+                <button id="menu-trigger" class="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#324A2E] text-white transition-all duration-200 ease-out hover:bg-[#3F5C3A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#324A2E] active:bg-[#253923] active:shadow-inner lg:hidden" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="mobile-menu">
+                    <i data-lucide="menu" class="h-5 w-5" aria-hidden="true"></i>
+                </button>
+            </div>
+            <nav id="mobile-menu" class="hidden border-t border-[#F5F0EB] px-5 pb-5 pt-4 sm:px-8 lg:hidden" aria-label="Мобільна навігація" aria-hidden="true">
+                <div class="mb-4 flex min-h-12 items-center justify-between">
+                    <a class="inline-flex min-h-12 items-center gap-2 font-semibold transition-colors duration-200 ease-out hover:text-[#3F5C3A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E] focus-visible:ring-offset-2 focus-visible:ring-offset-white" href="#home">
+                        <img class="h-9 w-9 object-contain" src="assets/images/roasted_coffee_vector_logo.svg" alt="">
+                        <span>Смажена кава</span>
+                    </a>
+                    <button id="menu-close" class="inline-flex h-12 w-12 items-center justify-center rounded-full text-[#25241F] transition-colors duration-200 ease-out hover:bg-[#F5F0EB] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E] focus-visible:ring-offset-2 focus-visible:ring-offset-white" type="button" aria-label="Закрити меню">
+                        <i data-lucide="x" class="h-5 w-5" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="grid gap-1">
+                    <a class="flex min-h-12 items-center rounded-xl px-4 text-base font-medium text-[#6B6660] transition-colors duration-200 ease-out hover:bg-[#F5F0EB] hover:text-[#324A2E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E]" href="#home" aria-current="page">Головна</a>
+                    <a class="flex min-h-12 items-center rounded-xl px-4 text-base font-medium text-[#6B6660] transition-colors duration-200 ease-out hover:bg-[#F5F0EB] hover:text-[#324A2E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E]" href="#catalog">Каталог</a>
+                    <a class="flex min-h-12 items-center rounded-xl px-4 text-base font-medium text-[#6B6660] transition-colors duration-200 ease-out hover:bg-[#F5F0EB] hover:text-[#324A2E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E]" href="#about">Про нас</a>
+                    <a class="flex min-h-12 items-center rounded-xl px-4 text-base font-medium text-[#6B6660] transition-colors duration-200 ease-out hover:bg-[#F5F0EB] hover:text-[#324A2E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E]" href="#contacts">Контакти</a>
+                    <a class="flex min-h-12 items-center rounded-xl px-4 text-base font-medium text-[#6B6660] transition-colors duration-200 ease-out hover:bg-[#F5F0EB] hover:text-[#324A2E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E]" href="#blog">Блог</a>
+                    <a class="flex min-h-12 items-center rounded-xl px-4 text-base font-medium text-[#6B6660] transition-colors duration-200 ease-out hover:bg-[#F5F0EB] hover:text-[#324A2E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E]" href="#services">Послуги</a>
+                    <a class="flex min-h-12 items-center rounded-xl px-4 text-base font-medium text-[#6B6660] transition-colors duration-200 ease-out hover:bg-[#F5F0EB] hover:text-[#324A2E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E]" href="#constructor">Конструктор</a>
+                    <a class="flex min-h-12 items-center rounded-xl px-4 text-base font-medium text-[#6B6660] transition-colors duration-200 ease-out hover:bg-[#F5F0EB] hover:text-[#324A2E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E]" href="#atmosphere">Атмосфера</a>
+                </div>
+                <a class="mt-4 flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#324A2E] px-5 text-sm font-semibold text-white transition-all duration-200 ease-out hover:bg-[#3F5C3A] hover:underline hover:underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#324A2E] active:bg-[#253923] active:shadow-inner" href="#catalog">
+                    <i data-lucide="shopping-bag" class="h-4 w-4" aria-hidden="true"></i>
+                    Додати в кошик
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="scroll-mt-28 mx-auto grid w-full max-w-[1360px] items-center gap-9 px-5 pb-14 pt-16 sm:px-10 sm:pb-20 sm:pt-20 lg:grid-cols-2 lg:gap-16 lg:px-16 lg:pb-24 lg:pt-28">
+            <div>
+                <p class="text-[11px] font-semibold uppercase leading-5 tracking-[0.16em] text-[#6B6660] sm:text-[13px] sm:leading-6">Свіже обсмажування · ваш щоденний ритуал</p>
+                <h1 class="mt-5 max-w-2xl font-['Fraunces',serif] text-[42px] font-medium leading-[1.08] tracking-[-0.035em] text-[#25241F] sm:mt-6 sm:text-5xl lg:text-[64px]">Добрий ранок починається зі своєї кави.</h1>
+                <p class="mt-5 max-w-xl text-base leading-7 text-[#6B6660] sm:mt-6 sm:text-lg sm:leading-8">Крафтове зерно з чесним характером. Обсмажуємо під домашні методи та допомагаємо знайти смак, який хочеться повторити.</p>
+                <div class="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3 sm:mt-8">
+                    <a class="inline-flex h-[55px] min-w-[156px] items-center justify-center rounded-full bg-[#324A2E] px-6 text-sm font-semibold text-white transition-all duration-200 ease-out hover:bg-[#3F5C3A] hover:underline hover:underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#324A2E] active:bg-[#253923] active:shadow-inner" href="#catalog">Переглянути каву</a>
+                    <a class="inline-flex min-h-12 items-center gap-2 rounded-full font-medium text-[#324A2E] transition-colors duration-200 ease-out hover:text-[#3F5C3A] hover:underline hover:underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F5F0EB]" href="#constructor">
+                        Створити власний мікс
+                        <i data-lucide="arrow-right" class="h-4 w-4" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="mt-8 grid gap-3 text-sm leading-6 text-[#6B6660] sm:mt-9 sm:grid-cols-2 sm:gap-5">
+                    <p class="flex items-start gap-3">
+                        <i data-lucide="map-pin" class="mt-1 h-4 w-4 shrink-0 text-[#324A2E]" aria-hidden="true"></i>
+                        <span>Походження без таємниць · рецепт до кожного зерна</span>
+                    </p>
+                    <p class="flex items-start gap-3">
+                        <i data-lucide="coffee" class="mt-1 h-4 w-4 shrink-0 text-[#324A2E]" aria-hidden="true"></i>
+                        <span>Від першого ковтка — зрозумілий смак</span>
+                    </p>
+                </div>
+            </div>
+            <figure class="w-full">
+                <img class="aspect-[4/3] w-full rounded-3xl object-cover sm:aspect-[5/4] lg:aspect-[4/3]" src="assets/images/hero-pour-over.jpg" alt="Бариста наливає свіжу каву з пуровера у крапчасту керамічну чашку на дерев’яному столі">
+                <figcaption class="mt-3 text-sm leading-6 text-[#6B6660]">Для повільних ранків і маленьких щоденних відкриттів.</figcaption>
+            </figure>
+        </section>
+
+        <section id="catalog" class="scroll-mt-28 bg-white/50">
+            <div class="mx-auto max-w-[1360px] px-5 py-14 sm:px-10 sm:py-20 lg:px-16 lg:py-24">
+                <div class="mb-8 flex flex-wrap items-end justify-between gap-5 sm:mb-10">
+                    <div class="max-w-2xl">
+                        <p class="text-xs font-semibold uppercase tracking-[0.16em] text-[#6B6660]">Знайомство з обсмажуванням</p>
+                        <h2 class="mt-3 font-['Fraunces',serif] text-3xl font-medium leading-tight tracking-[-0.02em] text-[#25241F] sm:text-4xl">Кава, до якої хочеться повертатися</h2>
+                        <p class="mt-3 max-w-xl text-base leading-7 text-[#6B6660] sm:text-lg">Знайомі смаки й свіже зерно для вашого щоденного ритуалу.</p>
+                    </div>
+                    <a class="inline-flex min-h-12 items-center gap-2 rounded-full font-medium text-[#324A2E] transition-colors duration-200 ease-out hover:text-[#3F5C3A] hover:underline hover:underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F5F0EB]" href="#catalog">Увесь каталог <i data-lucide="arrow-right" class="h-4 w-4" aria-hidden="true"></i></a>
+                </div>
+                <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+                    <article class="flex flex-col overflow-hidden rounded-2xl bg-white p-4 shadow-sm sm:p-5">
+                        <img class="aspect-[4/5] w-full rounded-xl bg-[#1C1714] object-cover" src="assets/images/blend-velvet.jpg" alt="Пакет темно обсмаженої кави «Оксамит» на темному тлі">
+                        <div class="flex flex-1 flex-col items-center px-1 pb-1 pt-5 text-center">
+                            <p class="text-xs font-medium uppercase tracking-[0.12em] text-[#6B6660]">Бленд · шоколад · карамель</p>
+                            <h3 class="mt-2 font-['Fraunces',serif] text-2xl font-semibold text-[#25241F]">Бленд «Оксамит»</h3>
+                            <p class="mt-2 text-sm text-[#6B6660]">250 г · темне смаження</p>
+                            <p class="mt-4 text-lg font-bold text-[#25241F]">390 грн</p>
+                            <button class="add-to-cart mt-5 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-[#324A2E] px-5 text-sm font-semibold text-white transition-all duration-200 ease-out hover:bg-[#3F5C3A] hover:underline hover:underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#324A2E] active:bg-[#253923] active:shadow-inner" type="button">
+                                <i data-lucide="shopping-bag" class="h-4 w-4" aria-hidden="true"></i>
+                                <span>Додати в кошик</span>
+                            </button>
+                        </div>
+                    </article>
+                    <article class="flex flex-col overflow-hidden rounded-2xl bg-white p-4 shadow-sm sm:p-5">
+                        <img class="aspect-[4/5] w-full rounded-xl bg-[#1C1714] object-cover" src="assets/images/blend-brazil.jpg" alt="Пакет бразильської кави «Тихий ранок» із нотами шоколаду та горіха">
+                        <div class="flex flex-1 flex-col items-center px-1 pb-1 pt-5 text-center">
+                            <p class="text-xs font-medium uppercase tracking-[0.12em] text-[#6B6660]">Бразилія · шоколад · горіх</p>
+                            <h3 class="mt-2 font-['Fraunces',serif] text-2xl font-semibold text-[#25241F]">«Тихий ранок»</h3>
+                            <p class="mt-2 text-sm text-[#6B6660]">250 г · середнє смаження</p>
+                            <p class="mt-4 text-lg font-bold text-[#25241F]">420 грн</p>
+                            <button class="add-to-cart mt-5 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-[#324A2E] px-5 text-sm font-semibold text-white transition-all duration-200 ease-out hover:bg-[#3F5C3A] hover:underline hover:underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#324A2E] active:bg-[#253923] active:shadow-inner" type="button">
+                                <i data-lucide="shopping-bag" class="h-4 w-4" aria-hidden="true"></i>
+                                <span>Додати в кошик</span>
+                            </button>
+                        </div>
+                    </article>
+                    <article class="flex flex-col overflow-hidden rounded-2xl bg-white p-4 shadow-sm sm:p-5">
+                        <img class="aspect-[4/5] w-full rounded-xl bg-[#1C1714] object-cover" src="assets/images/blend-ethiopia.jpg" alt="Пакет ефіопської кави «Квіткова» з яскравими квітковими нотами">
+                        <div class="flex flex-1 flex-col items-center px-1 pb-1 pt-5 text-center">
+                            <p class="text-xs font-medium uppercase tracking-[0.12em] text-[#6B6660]">Ефіопія · ягоди · квіти</p>
+                            <h3 class="mt-2 font-['Fraunces',serif] text-2xl font-semibold text-[#25241F]">«Квіткова»</h3>
+                            <p class="mt-2 text-sm text-[#6B6660]">250 г · світле смаження</p>
+                            <p class="mt-4 text-lg font-bold text-[#25241F]">480 грн</p>
+                            <button class="add-to-cart mt-5 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-[#324A2E] px-5 text-sm font-semibold text-white transition-all duration-200 ease-out hover:bg-[#3F5C3A] hover:underline hover:underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#324A2E] active:bg-[#253923] active:shadow-inner" type="button">
+                                <i data-lucide="shopping-bag" class="h-4 w-4" aria-hidden="true"></i>
+                                <span>Додати в кошик</span>
+                            </button>
+                        </div>
+                    </article>
+                </div>
+                <p id="cart-status" class="sr-only" role="status" aria-live="polite"></p>
+            </div>
+        </section>
+
+        <section id="about" class="scroll-mt-28 mx-auto grid max-w-[1360px] gap-8 px-5 py-14 sm:px-10 sm:py-20 lg:grid-cols-2 lg:items-center lg:gap-16 lg:px-16 lg:py-24">
+            <div class="overflow-hidden rounded-3xl bg-[#E8E2DB]">
+                <img class="aspect-[4/3] w-full object-cover" src="assets/images/hero-pour-over.jpg" alt="Ретельне приготування кави у майстерні">
+            </div>
+            <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.16em] text-[#6B6660]">Наша майстерня</p>
+                <h2 class="mt-3 font-['Fraunces',serif] text-3xl font-medium leading-tight tracking-[-0.02em] sm:text-4xl">За кожною чашкою — люди, які дбають</h2>
+                <p class="mt-5 text-base leading-7 text-[#6B6660] sm:text-lg">Смажена кава — майстерня домашнього смаку. Ми віримо в чесне зерно, уважне обсмажування й просту розмову про те, що вам подобається.</p>
+                <div class="mt-6 grid gap-4 sm:grid-cols-2">
+                    <article class="rounded-2xl bg-white p-5">
+                        <h3 class="font-['Fraunces',serif] text-xl font-semibold">Чесне зерно</h3>
+                        <p class="mt-2 text-sm leading-6 text-[#6B6660]">Знаємо історію кожної партії та дбайливо працюємо з її природним смаком.</p>
+                    </article>
+                    <article class="rounded-2xl bg-white p-5">
+                        <h3 class="font-['Fraunces',serif] text-xl font-semibold">Уважне обсмажування</h3>
+                        <p class="mt-2 text-sm leading-6 text-[#6B6660]">Невеликі партії допомагають зберегти характер зерна й стабільність чашки.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="scroll-mt-28 bg-white/50">
+            <div class="mx-auto max-w-[1360px] px-5 py-14 sm:px-10 sm:py-20 lg:px-16 lg:py-24">
+                <div class="max-w-2xl">
+                    <p class="text-xs font-semibold uppercase tracking-[0.16em] text-[#6B6660]">Чим допоможемо</p>
+                    <h2 class="mt-3 font-['Fraunces',serif] text-3xl font-medium leading-tight sm:text-4xl">Кава, підібрана під вас</h2>
+                    <p class="mt-4 text-base leading-7 text-[#6B6660] sm:text-lg">Допоможемо відчути різницю між зернами, знайти свій рецепт і отримувати стабільно смачну чашку вдома.</p>
+                </div>
+                <div class="mt-8 grid gap-4 md:grid-cols-3">
+                    <article class="rounded-2xl bg-white p-6 shadow-sm">
+                        <p class="text-xs font-semibold uppercase tracking-[0.12em] text-[#6B6660]">01 · Персональний підбір</p>
+                        <h3 class="mt-3 font-['Fraunces',serif] text-2xl font-semibold">Знайдіть свій смак</h3>
+                        <p class="mt-3 text-sm leading-6 text-[#6B6660]">Підкажемо зерно за улюбленим способом заварювання та смаковими вподобаннями.</p>
+                    </article>
+                    <article class="rounded-2xl bg-white p-6 shadow-sm">
+                        <p class="text-xs font-semibold uppercase tracking-[0.12em] text-[#6B6660]">02 · Консультація</p>
+                        <h3 class="mt-3 font-['Fraunces',serif] text-2xl font-semibold">Налаштуйте заварювання</h3>
+                        <p class="mt-3 text-sm leading-6 text-[#6B6660]">Розберемо помел, пропорції та температуру для вашої кави й обладнання.</p>
+                    </article>
+                    <article class="rounded-2xl bg-white p-6 shadow-sm">
+                        <p class="text-xs font-semibold uppercase tracking-[0.12em] text-[#6B6660]">03 · Подарункові набори</p>
+                        <h3 class="mt-3 font-['Fraunces',serif] text-2xl font-semibold">Поділіться хорошою чашкою</h3>
+                        <p class="mt-3 text-sm leading-6 text-[#6B6660]">Зберемо добірку зерна для знайомства з різними походженнями та смаками.</p>
+                    </article>
+                </div>
+                <a class="mt-7 inline-flex min-h-12 items-center rounded-full bg-[#324A2E] px-6 text-sm font-semibold text-white transition-colors hover:bg-[#3F5C3A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E] focus-visible:ring-offset-2" href="#contacts">Запитати про послуги</a>
+            </div>
+        </section>
+
+        <section id="blog" class="scroll-mt-28 mx-auto max-w-[1360px] px-5 py-14 sm:px-10 sm:py-20 lg:px-16 lg:py-24">
+            <div class="mb-8 max-w-2xl">
+                <p class="text-xs font-semibold uppercase tracking-[0.16em] text-[#6B6660]">Нотатки й рецепти</p>
+                <h2 class="mt-3 font-['Fraunces',serif] text-3xl font-medium leading-tight sm:text-4xl">Більше про смак і заварювання</h2>
+                <p class="mt-4 text-base leading-7 text-[#6B6660] sm:text-lg">Поради для щоденних кавових ритуалів — від вибору зерна до останнього ковтка.</p>
+            </div>
+            <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+                <article class="overflow-hidden rounded-2xl bg-white shadow-sm">
+                    <img class="aspect-[4/3] w-full object-cover" src="assets/images/hero-pour-over.jpg" alt="Кава, заварена через пуровер">
+                    <div class="p-5">
+                        <p class="text-xs font-semibold uppercase tracking-[0.12em] text-[#6B6660]">Заварювання · 5 хв читання</p>
+                        <h3 class="mt-2 font-['Fraunces',serif] text-2xl font-semibold leading-tight">Пуровер удома: простий рецепт чистого смаку</h3>
+                        <p class="mt-3 text-sm leading-6 text-[#6B6660]">Кілька зрозумілих кроків, щоб розкрити зерно у вашій ранковій чашці.</p>
+                        <a class="mt-4 inline-flex min-h-11 items-center font-semibold text-[#324A2E] hover:underline" href="#recipe">Читати рецепт <span class="sr-only">про пуровер</span></a>
+                    </div>
+                </article>
+                <article class="overflow-hidden rounded-2xl bg-white shadow-sm">
+                    <img class="aspect-[4/3] w-full object-cover" src="assets/images/blend-velvet.jpg" alt="Обсмажене кавове зерно">
+                    <div class="p-5">
+                        <p class="text-xs font-semibold uppercase tracking-[0.12em] text-[#6B6660]">Зерно · 4 хв читання</p>
+                        <h3 class="mt-2 font-['Fraunces',serif] text-2xl font-semibold leading-tight">Як читати смакові ноти на пакеті</h3>
+                        <p class="mt-3 text-sm leading-6 text-[#6B6660]">Пояснюємо, як опис зерна підказує, чого чекати від чашки.</p>
+                        <a class="mt-4 inline-flex min-h-11 items-center font-semibold text-[#324A2E] hover:underline" href="#about">Дізнатися про наше зерно <span class="sr-only">та його походження</span></a>
+                    </div>
+                </article>
+                <article class="overflow-hidden rounded-2xl bg-white shadow-sm">
+                    <img class="aspect-[4/3] w-full object-cover" src="assets/images/blend-brazil.jpg" alt="Кава для приготування у гейзерній кавоварці">
+                    <div class="p-5">
+                        <p class="text-xs font-semibold uppercase tracking-[0.12em] text-[#6B6660]">Рецепти · 6 хв читання</p>
+                        <h3 class="mt-2 font-['Fraunces',serif] text-2xl font-semibold leading-tight">Гейзерна кавоварка без гіркоти</h3>
+                        <p class="mt-3 text-sm leading-6 text-[#6B6660]">Невеликі зміни, що допоможуть отримати м’яку й збалансовану каву.</p>
+                        <a class="mt-4 inline-flex min-h-11 items-center font-semibold text-[#324A2E] hover:underline" href="#recipe">Перейти до поради <span class="sr-only">із заварювання</span></a>
+                    </div>
+                </article>
+            </div>
+            <article id="recipe" class="scroll-mt-28 mt-8 rounded-2xl bg-white p-6 sm:p-8">
+                <p class="text-xs font-semibold uppercase tracking-[0.12em] text-[#6B6660]">Рецепт · пуровер</p>
+                <h3 class="mt-2 font-['Fraunces',serif] text-2xl font-semibold">Як заварити чисту й збалансовану чашку</h3>
+                <p class="mt-3 max-w-3xl text-sm leading-6 text-[#6B6660]">Змеліть 15 г кави середньо, підготуйте фільтр і влийте 250 мл води температурою близько 93 °C. Спершу змочіть зерно невеликою кількістю води, зачекайте 30 секунд, а тоді доливайте воду повільно й рівномірно.</p>
+            </article>
+        </section>
+
+        <section id="constructor" class="scroll-mt-28 bg-[#EFEAE3]">
+            <div class="mx-auto grid max-w-[1360px] gap-8 px-5 py-14 sm:px-10 sm:py-20 lg:grid-cols-2 lg:items-center lg:gap-16 lg:px-16 lg:py-24">
+                <div>
+                    <p class="text-xs font-semibold uppercase tracking-[0.16em] text-[#6B6660]">Конструктор кави</p>
+                    <h2 class="mt-3 font-['Fraunces',serif] text-3xl font-medium leading-tight sm:text-4xl">Створіть власний кавовий мікс</h2>
+                    <p class="mt-4 text-base leading-7 text-[#6B6660]">Поєднайте улюблені смаки та знайдіть свій особливий баланс.</p>
+                </div>
+                <div class="rounded-2xl bg-white p-6 sm:p-8">
+                    <label class="block text-sm font-semibold" for="mix-bean">Оберіть зерно</label>
+                    <select id="mix-bean" class="mt-2 h-12 w-full rounded-xl border border-[#E8E2DB] bg-white px-4 text-sm focus:outline-none focus:ring-2 focus:ring-[#324A2E]">
+                        <option value="Бразилія «Тихий ранок»">Бразилія «Тихий ранок» · шоколад і горіх</option>
+                        <option value="Ефіопія «Квіткова»">Ефіопія «Квіткова» · ягоди й квіти</option>
+                        <option value="Колумбія «Медова»">Колумбія «Медова» · карамель і мед</option>
+                    </select>
+                    <label class="mt-5 block text-sm font-semibold" for="mix-method">Спосіб заварювання</label>
+                    <select id="mix-method" class="mt-2 h-12 w-full rounded-xl border border-[#E8E2DB] bg-white px-4 text-sm focus:outline-none focus:ring-2 focus:ring-[#324A2E]">
+                        <option>Фільтр</option>
+                        <option>Еспресо</option>
+                        <option>Френч-прес</option>
+                    </select>
+                    <p id="mix-summary" class="mt-5 text-sm leading-6 text-[#6B6660]" aria-live="polite">Ваш мікс: Бразилія «Тихий ранок» для фільтра.</p>
+                    <a class="mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-[#324A2E] px-6 text-sm font-semibold text-white transition-colors hover:bg-[#3F5C3A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E] focus-visible:ring-offset-2" href="#contacts">Порадьте мікс</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacts" class="scroll-mt-28 mx-auto grid max-w-[1360px] gap-8 px-5 py-14 sm:px-10 sm:py-20 lg:grid-cols-2 lg:gap-16 lg:px-16 lg:py-24">
+            <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.16em] text-[#6B6660]">Контакти</p>
+                <h2 class="mt-3 font-['Fraunces',serif] text-3xl font-medium leading-tight sm:text-4xl">Давайте поговоримо про каву</h2>
+                <p class="mt-4 max-w-xl text-base leading-7 text-[#6B6660]">Ми поруч, щоб допомогти з вибором зерна, обсмажуванням і заварюванням.</p>
+                <div class="mt-6 grid gap-4 sm:grid-cols-2">
+                    <article class="rounded-2xl bg-white p-5">
+                        <h3 class="text-sm font-semibold">Напишіть нам</h3>
+                        <a class="mt-3 inline-block break-all font-['Fraunces',serif] text-xl text-[#324A2E] hover:underline" href="mailto:hello@smazhena.example">hello@smazhena.example</a>
+                        <p class="mt-2 text-sm text-[#6B6660]">Відповідаємо у робочі дні.</p>
+                    </article>
+                    <article class="rounded-2xl bg-white p-5">
+                        <h3 class="text-sm font-semibold">Зателефонуйте</h3>
+                        <a class="mt-3 inline-block font-['Fraunces',serif] text-xl text-[#324A2E] hover:underline" href="tel:+380440000000">+380 (44) 000-00-00</a>
+                        <p class="mt-2 text-sm text-[#6B6660]">Пн–пт · 09:00–18:00</p>
+                    </article>
+                </div>
+            </div>
+            <div class="rounded-2xl bg-white p-6 sm:p-8">
+                <h3 class="font-['Fraunces',serif] text-2xl font-semibold">Чим можемо допомогти?</h3>
+                <p class="mt-3 text-sm leading-6 text-[#6B6660]">Напишіть нам — допоможемо підібрати зерно, рецепт або подарунок.</p>
+                <a class="mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-[#324A2E] px-6 text-sm font-semibold text-white transition-colors hover:bg-[#3F5C3A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E] focus-visible:ring-offset-2" href="mailto:hello@smazhena.example?subject=Питання%20про%20каву">Написати нам</a>
+            </div>
+            <div class="lg:col-span-2">
+                <h3 class="font-['Fraunces',serif] text-2xl font-semibold">Завітайте до нас</h3>
+                <p class="mt-2 text-sm leading-6 text-[#6B6660]">Точну адресу кав’ярні ще не вказано. Коли додасте її, оновіть запит у посиланні Google Maps, щоб показати правильне розташування.</p>
+                <div class="mt-4 aspect-video w-full overflow-hidden rounded-2xl border border-[#E8E2DB] bg-[#EFEAE3] shadow-sm">
+                    <iframe
+                        class="h-full w-full"
+                        src="https://www.google.com/maps?output=embed"
+                        title="Інтерактивна карта Google Maps — місце для адреси кав’ярні"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <section id="atmosphere" class="scroll-mt-28 bg-[#EFEAE3]">
+            <div class="mx-auto max-w-[1360px] px-5 py-14 sm:px-10 sm:py-20 lg:px-16 lg:py-24">
+                <div class="mx-auto max-w-3xl text-center">
+                    <p class="text-xs font-semibold uppercase tracking-[0.16em] text-[#6B6660]">Наша кав’ярня</p>
+                    <h2 class="mt-3 font-['Fraunces',serif] text-3xl font-medium leading-tight sm:text-4xl">Атмосфера нашої кав’ярні</h2>
+                    <p class="mt-4 text-base leading-7 text-[#6B6660]">Зазирніть у світ нашої кави та щоденних ритуалів.</p>
+                </div>
+                <figure class="mx-auto mt-8 aspect-video w-full max-w-[64rem] overflow-hidden rounded-2xl bg-[#222222] shadow-lg">
+                    <iframe
+                        class="block h-full w-full border-0"
+                        src="https://www.youtube.com/embed/5KMLWU_P95w?si=0iOO2u7AglBXld7f"
+                        title="Атмосфера нашої кав’ярні — відео на YouTube"
+                        loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                    <figcaption class="sr-only">Відео про атмосферу кав’ярні «Смажена кава».</figcaption>
+                </figure>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <section class="bg-[#EFEAE3] text-[#6B625A]" aria-labelledby="newsletter-title">
+            <div class="mx-auto grid max-w-[1440px] gap-8 px-5 py-16 sm:px-10 sm:py-20 lg:grid-cols-[1.5fr_1fr] lg:items-center lg:gap-16 lg:px-20">
+                <div>
+                    <p class="text-xs font-semibold uppercase tracking-[0.12em]">Листи без поспіху</p>
+                    <h2 id="newsletter-title" class="mt-4 font-['Fraunces',serif] text-3xl font-semibold leading-tight text-[#292724] sm:text-4xl">Трохи кави у вашій пошті</h2>
+                    <p class="mt-4 text-base font-medium leading-7">Нові лоти, перевірені рецепти й одна добра порада. Двічі на місяць, без зайвого шуму.</p>
+                </div>
+                <form action="mailto:hello@smazhena.example" method="post" enctype="text/plain">
+                    <label class="block text-sm font-semibold text-[#292724]" for="newsletter-email">Електронна пошта</label>
+                    <input id="newsletter-email" name="Електронна пошта" class="mt-3 h-12 w-full rounded-2xl bg-[#FFFCF8] px-4 text-sm text-[#292724] placeholder:text-[#756C64] focus:outline-none focus:ring-2 focus:ring-[#324A2E]" type="email" autocomplete="email" placeholder="Ваша електронна пошта" required>
+                    <button class="mt-4 inline-flex min-h-14 min-w-[157px] items-center justify-center rounded-full bg-[#324A2E] px-8 text-sm font-semibold text-white transition-colors hover:bg-[#3F5C3A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E] focus-visible:ring-offset-2 focus-visible:ring-offset-[#EFEAE3]" type="submit">Підписатися</button>
+                    <p class="mt-4 max-w-md text-xs font-medium leading-5">Підписуючись, ви погоджуєтеся з політикою конфіденційності. Відписатися можна будь-коли.</p>
+                </form>
+            </div>
+        </section>
+        <div class="bg-[#222222] text-white">
+            <div class="mx-auto max-w-[1440px] px-5 py-12 sm:px-10 sm:py-14 lg:px-20">
+                <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
+                    <a class="w-fit shrink-0 font-['Fraunces',serif] text-2xl font-semibold text-white transition-colors hover:text-[#EFEAE3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white" href="#home">Смажена кава</a>
+                    <p class="text-base font-medium leading-6">Зерно з характером. Кава для вашого дому.<br>Конструктор міксу · Персональний підбір</p>
+                </div>
+                <div class="mt-10 grid gap-8 sm:grid-cols-2 lg:mt-12 lg:grid-cols-[1fr_400px]">
+                    <nav class="flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium" aria-label="Навігація у підвалі">
+                        <a class="inline-flex min-h-12 items-center hover:underline" href="#catalog">Каталог</a>
+                        <a class="inline-flex min-h-12 items-center hover:underline" href="#about">Про нас</a>
+                        <a class="inline-flex min-h-12 items-center hover:underline" href="#services">Послуги</a>
+                        <a class="inline-flex min-h-12 items-center hover:underline" href="#blog">Блог</a>
+                        <a class="inline-flex min-h-12 items-center hover:underline" href="#contacts">Контакти</a>
+                        <a class="inline-flex min-h-12 items-center hover:underline" href="#atmosphere">Атмосфера</a>
+                    </nav>
+                    <div class="text-sm font-medium leading-6">
+                        <p class="font-semibold">Завжди раді розмові</p>
+                        <a class="block hover:underline" href="mailto:hello@smazhena.example">hello@smazhena.example</a>
+                        <a class="block hover:underline" href="tel:+380440000000">+380 (44) 000-00-00</a>
+                        <p>Пн–пт · 09:00–18:00</p>
+                        <p><a class="hover:underline" href="https://www.instagram.com/">Інстаграм</a> · <a class="hover:underline" href="https://t.me/">Телеграм</a></p>
+                        <p>Контактні дані · Приклад</p>
+                    </div>
+                </div>
+                <div class="mt-8 grid gap-4 border-t border-white/15 pt-6 text-sm leading-6 text-white/75 sm:grid-cols-3">
+                    <p id="privacy"><span class="font-semibold text-white">Конфіденційність.</span> Використовуємо ваші дані лише для відповіді на запит. <a class="underline underline-offset-2 hover:no-underline" href="mailto:hello@smazhena.example">Запитати нас</a>.</p>
+                    <p id="delivery"><span class="font-semibold text-white">Оплата й доставка.</span> Деталі замовлення та доставки узгоджуємо під час оформлення.</p>
+                    <p id="returns"><span class="font-semibold text-white">Повернення.</span> Напишіть нам щодо повернення чи обміну — допоможемо розібратися.</p>
+                </div>
+                <div class="mt-10 flex flex-col gap-6 border-t border-white/15 pt-5 text-sm font-medium sm:flex-row sm:items-center sm:justify-between">
+                    <nav class="flex flex-wrap gap-x-6 gap-y-3" aria-label="Юридична інформація">
+                        <a class="underline underline-offset-2 hover:no-underline" href="#privacy">Конфіденційність</a>
+                        <a class="underline underline-offset-2 hover:no-underline" href="#delivery">Оплата й доставка</a>
+                        <a class="underline underline-offset-2 hover:no-underline" href="#returns">Повернення</a>
+                    </nav>
+                    <p>© 2026 Смажена кава</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        const menuTrigger = document.getElementById("menu-trigger");
+        const menuClose = document.getElementById("menu-close");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        function setMenuOpen(open) {
+            mobileMenu.classList.toggle("hidden", !open);
+            mobileMenu.setAttribute("aria-hidden", String(!open));
+            menuTrigger.setAttribute("aria-expanded", String(open));
+            menuTrigger.setAttribute("aria-label", open ? "Закрити меню" : "Відкрити меню");
+            if (open) {
+                menuClose.focus();
+            } else {
+                menuTrigger.focus();
+            }
+        }
+
+        menuTrigger.addEventListener("click", () => {
+            setMenuOpen(menuTrigger.getAttribute("aria-expanded") !== "true");
+        });
+        menuClose.addEventListener("click", () => setMenuOpen(false));
+        mobileMenu.querySelectorAll('a[href^="#"]').forEach((link) => {
+            link.addEventListener("click", () => {
+                mobileMenu.classList.add("hidden");
+                mobileMenu.setAttribute("aria-hidden", "true");
+                menuTrigger.setAttribute("aria-expanded", "false");
+                menuTrigger.setAttribute("aria-label", "Відкрити меню");
+                menuTrigger.focus();
+            });
+        });
+        document.addEventListener("keydown", (event) => {
+            if (mobileMenu.classList.contains("hidden") || window.matchMedia("(min-width: 1024px)").matches) return;
+            if (event.key === "Escape") {
+                event.preventDefault();
+                setMenuOpen(false);
+                return;
+            }
+            if (event.key !== "Tab") return;
+            const focusable = Array.from(mobileMenu.querySelectorAll('a[href], button:not([disabled])'));
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
+            }
+        });
+
+        const cartStatus = document.getElementById("cart-status");
+        document.querySelectorAll(".add-to-cart").forEach((button) => {
+            button.addEventListener("click", () => {
+                const text = button.querySelector("span");
+                if (button.disabled) return;
+                button.disabled = true;
+                text.textContent = "Додано до кошика";
+                cartStatus.textContent = "Каву додано до кошика.";
+                window.setTimeout(() => {
+                    text.textContent = "Додати в кошик";
+                    button.disabled = false;
+                }, 1600);
+            });
+        });
+
+        const mixBean = document.getElementById("mix-bean");
+        const mixMethod = document.getElementById("mix-method");
+        const mixSummary = document.getElementById("mix-summary");
+        function updateMixSummary() {
+            mixSummary.textContent = `Ваш мікс: ${mixBean.value} для способу «${mixMethod.value.toLowerCase()}».`;
+        }
+        mixBean.addEventListener("change", updateMixSummary);
+        mixMethod.addEventListener("change", updateMixSummary);
+
+    </script>
+</body>
+</html>

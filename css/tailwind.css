@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+@source "../*.html";
+@source "../js/**/*.js";
+
+:root {
+    --video-max-width: 80rem;
+    --video-border-radius: 1rem;
+}
+
+@theme {
+    --color-coffee-paper: #F5F0EB;
+    --color-coffee-band: #EFEAE3;
+    --color-coffee-surface: #FFFCF8;
+    --color-coffee-green: #324A2E;
+    --color-coffee-green-hover: #3F5C3A;
+    --color-coffee-green-pressed: #253923;
+    --color-coffee-tan: #B69370;
+    --color-coffee-ink: #2A2622;
+    --color-coffee-neutral: #59544C;
+    --color-coffee-muted: #6B625A;
+    --color-coffee-brown: #4A3627;
+    --color-coffee-border: #E8E2DB;
+    --color-coffee-disabled: #D8D3CB;
+    --color-coffee-footer: #1C1714;
+}
+
+@layer base {
+    html {
+        min-width: 320px;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        min-width: 320px;
+        margin: 0;
+        background: var(--color-coffee-paper);
+    }
+}
+
+@layer components {
+    site-header {
+        @apply block;
+    }
+
+    site-header[mobile-only] {
+        @apply block lg:hidden;
+    }
+
+    .mobile-page {
+        @apply min-h-screen bg-coffee-paper px-5 pb-12 pt-3 text-coffee-ink;
+    }
+
+    .mobile-header {
+        @apply -mx-5 -mt-3 flex h-20 items-center justify-between rounded-b-[30px] bg-white px-5;
+    }
+
+    .mobile-brand {
+        @apply flex items-center gap-3 text-lg font-bold;
+    }
+
+    .mobile-brand-mark {
+        @apply h-10 w-10 shrink-0 text-coffee-tan;
+    }
+
+    .mobile-chip {
+        @apply rounded-full border border-coffee-border px-4 py-2 text-sm text-coffee-muted transition-colors duration-200 hover:border-coffee-green-hover hover:bg-coffee-green-hover hover:text-white;
+    }
+
+    .mobile-chip.is-active {
+        @apply border-coffee-green bg-coffee-green text-white;
+    }
+
+    .mobile-content {
+        @apply mx-auto max-w-2xl;
+    }
+
+    .mobile-eyebrow {
+        @apply text-sm font-medium uppercase tracking-[0.16em] text-coffee-ink/65;
+    }
+
+    .mobile-title {
+        @apply font-serif text-[2rem] font-medium leading-[1.1] tracking-[-0.035em] text-coffee-ink sm:text-[2.5rem];
+    }
+
+    .mobile-lead {
+        @apply text-lg leading-[1.55] text-coffee-ink/65;
+    }
+
+    .mobile-section-title {
+        @apply font-serif text-3xl font-medium leading-tight tracking-[-0.025em];
+    }
+
+    .mobile-card {
+        @apply rounded-[20px] border border-coffee-tan/20 bg-[#FFFCF8] p-5;
+    }
+
+    .mobile-cta {
+        @apply flex min-h-12 items-center justify-center rounded-full bg-coffee-green px-5 py-3 text-center text-sm font-semibold text-white;
+    }
+
+    .mobile-art-panel {
+        @apply min-h-52 rounded-[20px] bg-coffee-green;
+    }
+
+    .mobile-footer {
+        @apply mt-16 rounded-[24px] bg-coffee-footer px-6 py-8 text-white;
+    }
+
+    .mobile-footer a {
+        @apply text-white/75 underline-offset-4 transition-colors duration-200 hover:text-white hover:underline focus-visible:outline-2 focus-visible:outline-coffee-tan;
+    }
+
+    .mobile-cta:not([aria-disabled="true"]) {
+        @apply cursor-pointer transition-all duration-200 hover:-translate-y-0.5 hover:bg-coffee-green-hover hover:shadow-lg active:translate-y-0 active:scale-[0.98] active:bg-coffee-green-pressed focus-visible:outline-2 focus-visible:outline-coffee-tan focus-visible:outline-offset-2;
+    }
+
+    .mobile-cta[aria-disabled="true"] {
+        @apply cursor-not-allowed bg-coffee-disabled text-coffee-muted;
+    }
+
+    .page-artwork {
+        @apply relative mx-auto w-full max-w-[1440px] bg-coffee-paper;
+    }
+
+    .artwork-button-hover {
+        @apply absolute z-30 hidden rounded-full transition-all duration-200 hover:bg-coffee-green-hover/20 hover:shadow-[inset_0_0_0_2px_#3F5C3A];
+    }
+
+    .page-artwork picture,
+    .page-artwork picture > img,
+    .page-artwork > img:not(.home-mobile-logo) {
+        @apply block h-auto w-full;
+    }
+
+    .video-player {
+        width: 100%;
+        max-width: var(--video-max-width);
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        border-radius: var(--video-border-radius);
+        background: #222;
+    }
+
+    .video-player iframe {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+}
+
+@media (min-width: 701px) {
+    .artwork-button-hover {
+        display: block;
+    }
+}
+
+@media (max-width: 700px) {
+}
