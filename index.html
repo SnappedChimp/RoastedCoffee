@@ -7,11 +7,12 @@
     <meta name="theme-color" content="#F5F0EB">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Смажена кава — кава для вашого щоденного ритуалу</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="(min-width: 701px)">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="preload" as="style" media="(max-width: 700px)" onload="this.onload=null;this.rel='stylesheet'">
+    <script src="https://unpkg.com/lucide@latest" defer></script>
     <style>
         html { scroll-behavior: smooth; scroll-padding-top: 7rem; }
         @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
@@ -391,7 +392,7 @@
     </footer>
 
     <script>
-        lucide.createIcons();
+        window.addEventListener("DOMContentLoaded", () => lucide.createIcons(), { once: true });
 
         const menuTrigger = document.getElementById("menu-trigger");
         const menuClose = document.getElementById("menu-close");
