@@ -10,3 +10,8 @@ A craft coffee website project.
 
 ## Description
 A website for home baristas and specialty coffee enthusiasts.
+
+## Features
+- Coffee catalog
+- Articles
+- Contact page
