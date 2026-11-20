@@ -6,6 +6,7 @@
     <title>Контакти — Смажена кава</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/site-header.js" defer></script>
+    <script src="js/feedback-form.js" defer></script>
 </head>
 <body>
     <main class="page-artwork hidden lg:block" data-page="contacts">
@@ -40,12 +41,119 @@
             <section class="mt-10">
                 <p class="mobile-eyebrow mb-3">Зворотний зв'язок</p>
                 <h2 class="mobile-section-title">Чим можемо допомогти?</h2>
-                <div class="mt-5 grid gap-4 rounded-[20px] border border-coffee-tan/20 bg-[#FFFCF8] p-5">
-                    <div class="rounded-xl border border-coffee-tan/30 px-4 py-3 text-sm text-coffee-ink/45">Ваше ім'я</div>
-                    <div class="rounded-xl border border-coffee-tan/30 px-4 py-3 text-sm text-coffee-ink/45">Електронна пошта</div>
-                    <div class="rounded-xl border border-coffee-tan/30 px-4 py-3 text-sm text-coffee-ink/45">Ваше повідомлення</div>
-                    <div class="mobile-cta w-full" aria-disabled="true">Форма тимчасово неактивна</div>
-                </div>
+                <form class="feedback-form mx-auto mt-5 w-full max-w-2xl" method="post" aria-describedby="feedback-description">
+                    <fieldset class="grid grid-cols-1 gap-5 rounded-[20px] border border-coffee-tan/20 bg-[#FFFCF8] p-5 shadow-sm sm:p-7 md:grid-cols-2 md:gap-6">
+                        <legend class="font-serif text-2xl font-medium leading-tight tracking-[-0.025em] text-coffee-ink md:col-span-2">
+                            Напишіть нам
+                        </legend>
+
+                        <p id="feedback-description" class="-mt-2 text-sm leading-relaxed text-coffee-ink/65 md:col-span-2">
+                            Розкажіть, що вас цікавить, і ми відповімо протягом робочого дня.
+                        </p>
+
+                        <div class="form-field">
+                            <label for="username" class="mb-2 block text-sm font-semibold text-coffee-ink">Ім’я</label>
+                            <input
+                                class="peer min-h-12 w-full rounded-xl border border-coffee-tan/30 bg-white px-4 text-base text-coffee-ink outline-none transition-all duration-200 ease-out hover:border-coffee-tan focus:border-coffee-green focus:ring-2 focus:ring-coffee-green/25 focus-visible:ring-2 focus-visible:ring-coffee-green/35 aria-[invalid=true]:border-red-600 aria-[invalid=true]:bg-red-50 aria-[invalid=true]:focus:ring-red-500/25 valid:border-coffee-green valid:bg-[#F4F8F1]"
+                                id="username"
+                                name="username"
+                                type="text"
+                                autocomplete="name"
+                                minlength="2"
+                                required
+                                aria-describedby="username-error"
+                                aria-invalid="false"
+                            >
+                            <p id="username-error" role="alert" hidden class="mt-2 text-sm font-medium text-red-700">
+                                Введіть ім’я мінімум із 2 символів.
+                            </p>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="email" class="mb-2 block text-sm font-semibold text-coffee-ink">Email</label>
+                            <input
+                                class="peer min-h-12 w-full rounded-xl border border-coffee-tan/30 bg-white px-4 text-base text-coffee-ink outline-none transition-all duration-200 ease-out hover:border-coffee-tan focus:border-coffee-green focus:ring-2 focus:ring-coffee-green/25 focus-visible:ring-2 focus-visible:ring-coffee-green/35 aria-[invalid=true]:border-red-600 aria-[invalid=true]:bg-red-50 aria-[invalid=true]:focus:ring-red-500/25 valid:border-coffee-green valid:bg-[#F4F8F1]"
+                                id="email"
+                                name="email"
+                                type="email"
+                                autocomplete="email"
+                                required
+                                aria-describedby="email-error"
+                                aria-invalid="false"
+                            >
+                            <p id="email-error" role="alert" hidden class="mt-2 text-sm font-medium text-red-700">
+                                Введіть коректну email-адресу.
+                            </p>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="phone" class="mb-2 block text-sm font-semibold text-coffee-ink">Телефон</label>
+                            <input
+                                class="peer min-h-12 w-full rounded-xl border border-coffee-tan/30 bg-white px-4 text-base text-coffee-ink outline-none transition-all duration-200 ease-out hover:border-coffee-tan focus:border-coffee-green focus:ring-2 focus:ring-coffee-green/25 focus-visible:ring-2 focus-visible:ring-coffee-green/35 aria-[invalid=true]:border-red-600 aria-[invalid=true]:bg-red-50 aria-[invalid=true]:focus:ring-red-500/25 valid:border-coffee-green valid:bg-[#F4F8F1]"
+                                id="phone"
+                                name="phone"
+                                type="tel"
+                                autocomplete="tel"
+                                inputmode="tel"
+                                pattern="^\+380[0-9]{9}$"
+                                required
+                                aria-describedby="phone-error"
+                                aria-invalid="false"
+                            >
+                            <p id="phone-error" role="alert" hidden class="mt-2 text-sm font-medium text-red-700">
+                                Введіть номер у форматі +380XXXXXXXXX.
+                            </p>
+                        </div>
+
+                        <div class="form-field md:col-span-2">
+                            <label for="message" class="mb-2 block text-sm font-semibold text-coffee-ink">Повідомлення</label>
+                            <textarea
+                                class="peer min-h-36 w-full resize-y rounded-xl border border-coffee-tan/30 bg-white px-4 py-3 text-base leading-relaxed text-coffee-ink outline-none transition-all duration-200 ease-out hover:border-coffee-tan focus:border-coffee-green focus:ring-2 focus:ring-coffee-green/25 focus-visible:ring-2 focus-visible:ring-coffee-green/35 aria-[invalid=true]:border-red-600 aria-[invalid=true]:bg-red-50 aria-[invalid=true]:focus:ring-red-500/25 valid:border-coffee-green valid:bg-[#F4F8F1]"
+                                id="message"
+                                name="message"
+                                rows="6"
+                                minlength="10"
+                                maxlength="1000"
+                                required
+                                aria-describedby="message-error"
+                                aria-invalid="false"
+                            ></textarea>
+                            <p id="message-error" role="alert" hidden class="mt-2 text-sm font-medium text-red-700">
+                                Напишіть повідомлення мінімум із 10 символів.
+                            </p>
+                        </div>
+
+                        <div class="form-field form-field--checkbox md:col-span-2">
+                            <div class="flex items-start gap-3">
+                                <input
+                                    class="peer mt-0.5 h-5 w-5 shrink-0 cursor-pointer rounded border-coffee-tan/50 text-coffee-green accent-coffee-green transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coffee-green focus-visible:ring-offset-2 aria-[invalid=true]:border-red-600"
+                                    id="agreement"
+                                    name="agreement"
+                                    type="checkbox"
+                                    value="accepted"
+                                    required
+                                    aria-describedby="agreement-error"
+                                    aria-invalid="false"
+                                >
+                                <label for="agreement" class="cursor-pointer text-sm leading-relaxed text-coffee-ink/65">
+                                    Я погоджуюся з
+                                    <a class="font-semibold text-coffee-green underline decoration-coffee-tan underline-offset-4 transition-colors duration-200 hover:text-coffee-green-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coffee-green focus-visible:ring-offset-2" href="/privacy-policy.html">
+                                        політикою конфіденційності
+                                    </a>.
+                                </label>
+                            </div>
+                            <p id="agreement-error" role="alert" hidden class="mt-2 text-sm font-medium text-red-700">
+                                Потрібно погодитися з політикою конфіденційності.
+                            </p>
+                        </div>
+
+                        <p id="form-status" role="status" aria-live="polite" class="min-h-5 text-sm font-medium text-coffee-green md:col-span-2"></p>
+
+                        <button class="inline-flex min-h-14 w-full items-center justify-center rounded-full bg-coffee-green px-6 py-3 text-sm font-semibold text-white transition-all duration-200 ease-out hover:bg-coffee-green-hover hover:underline hover:underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coffee-green focus-visible:ring-offset-2 focus-visible:ring-offset-[#FFFCF8] active:bg-coffee-green-pressed active:shadow-inner md:col-span-2 md:w-auto md:justify-self-start" type="submit">
+                            Надіслати
+                        </button>
+                    </fieldset>
+                </form>
             </section>
             <footer class="mobile-footer">
                 <p class="font-serif text-2xl">Смажена кава</p>

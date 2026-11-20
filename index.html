@@ -35,7 +35,9 @@
                     <a class="inline-flex min-h-12 items-center transition-colors duration-200 ease-out hover:text-[#3F5C3A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E] focus-visible:ring-offset-2 focus-visible:ring-offset-white" href="#constructor">Конструктор</a>
                     <a class="inline-flex min-h-12 items-center transition-colors duration-200 ease-out hover:text-[#3F5C3A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E] focus-visible:ring-offset-2 focus-visible:ring-offset-white" href="#atmosphere">Атмосфера</a>
                 </nav>
-                <a class="hidden min-h-12 shrink-0 items-center justify-center rounded-full bg-[#324A2E] px-6 text-sm font-semibold text-white transition-all duration-200 ease-out hover:bg-[#3F5C3A] hover:underline hover:underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#324A2E] active:bg-[#253923] active:shadow-inner lg:inline-flex" href="#catalog">Переглянути каву</a>
+                <button class="hidden min-h-12 shrink-0 items-center justify-center rounded-full bg-[#324A2E] px-6 text-sm font-semibold text-white transition-all duration-200 ease-out hover:bg-[#3F5C3A] hover:underline hover:underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#324A2E] active:bg-[#253923] active:shadow-inner lg:inline-flex" type="button" data-open-registration>
+                    Створити профіль
+                </button>
                 <button id="menu-trigger" class="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#324A2E] text-white transition-all duration-200 ease-out hover:bg-[#3F5C3A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#324A2E] active:bg-[#253923] active:shadow-inner lg:hidden" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="mobile-menu">
                     <i data-lucide="menu" class="h-5 w-5" aria-hidden="true"></i>
                 </button>
@@ -64,6 +66,9 @@
                     <i data-lucide="shopping-bag" class="h-4 w-4" aria-hidden="true"></i>
                     Додати в кошик
                 </a>
+                <button class="mt-3 flex min-h-12 w-full items-center justify-center rounded-full border border-[#324A2E] px-5 text-sm font-semibold text-[#324A2E] transition-colors duration-200 hover:bg-[#324A2E] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E] focus-visible:ring-offset-2" type="button" data-open-registration>
+                    Створити профіль
+                </button>
             </nav>
         </div>
     </header>
@@ -291,7 +296,9 @@
             <div class="rounded-2xl bg-white p-6 sm:p-8">
                 <h3 class="font-['Fraunces',serif] text-2xl font-semibold">Чим можемо допомогти?</h3>
                 <p class="mt-3 text-sm leading-6 text-[#6B6660]">Напишіть нам — допоможемо підібрати зерно, рецепт або подарунок.</p>
-                <a class="mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-[#324A2E] px-6 text-sm font-semibold text-white transition-colors hover:bg-[#3F5C3A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E] focus-visible:ring-offset-2" href="mailto:hello@smazhena.example?subject=Питання%20про%20каву">Написати нам</a>
+                <button class="mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-[#324A2E] px-6 text-sm font-semibold text-white transition-colors hover:bg-[#3F5C3A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E] focus-visible:ring-offset-2" type="button" data-open-feedback>
+                    Написати нам
+                </button>
             </div>
             <div class="lg:col-span-2">
                 <h3 class="font-['Fraunces',serif] text-2xl font-semibold">Завітайте до нас</h3>
@@ -390,6 +397,164 @@
         </div>
     </footer>
 
+    <dialog id="registration-dialog" class="m-auto w-[calc(100%-2rem)] max-w-md rounded-[28px] border border-[#B69370]/30 bg-[#FFFCF8] p-0 text-[#25241F] shadow-2xl backdrop:bg-[#25241F]/55 backdrop:backdrop-blur-sm" aria-labelledby="registration-title" aria-describedby="registration-description">
+        <div class="p-5 sm:p-7">
+            <div class="flex items-start justify-between gap-4">
+                <div>
+                    <p class="text-xs font-semibold uppercase tracking-[0.16em] text-[#6B6660]">Смажена кава</p>
+                    <h2 id="registration-title" class="mt-2 font-['Fraunces',serif] text-3xl font-semibold leading-tight tracking-[-0.02em]">Створіть профіль</h2>
+                </div>
+                <button class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[#25241F] transition-colors duration-200 hover:bg-[#F5F0EB] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E] focus-visible:ring-offset-2" type="button" data-close-registration aria-label="Закрити вікно реєстрації">
+                    <i data-lucide="x" class="h-5 w-5" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <p id="registration-description" class="mt-4 text-base leading-7 text-[#6B6660]">
+                Збережемо ваші улюблені сорти та зробимо наступне замовлення швидшим.
+            </p>
+
+            <form id="registration-form" class="mt-6 grid gap-4" novalidate>
+                <div>
+                    <label class="mb-2 block text-sm font-semibold" for="registration-name">Ім’я</label>
+                    <input id="registration-name" class="min-h-12 w-full rounded-xl border border-[#B69370]/30 bg-white px-4 text-base outline-none transition-all duration-200 hover:border-[#B69370] focus:border-[#324A2E] focus:ring-2 focus:ring-[#324A2E]/25 focus-visible:ring-2 focus-visible:ring-[#324A2E]/35 invalid:border-red-600 invalid:bg-red-50" name="name" type="text" autocomplete="name" minlength="2" required>
+                </div>
+
+                <div>
+                    <label class="mb-2 block text-sm font-semibold" for="registration-email">Email</label>
+                    <input id="registration-email" class="min-h-12 w-full rounded-xl border border-[#B69370]/30 bg-white px-4 text-base outline-none transition-all duration-200 hover:border-[#B69370] focus:border-[#324A2E] focus:ring-2 focus:ring-[#324A2E]/25 focus-visible:ring-2 focus-visible:ring-[#324A2E]/35 invalid:border-red-600 invalid:bg-red-50" name="email" type="email" autocomplete="email" required>
+                </div>
+
+                <div>
+                    <label class="mb-2 block text-sm font-semibold" for="registration-password">Пароль</label>
+                    <input id="registration-password" class="min-h-12 w-full rounded-xl border border-[#B69370]/30 bg-white px-4 text-base outline-none transition-all duration-200 hover:border-[#B69370] focus:border-[#324A2E] focus:ring-2 focus:ring-[#324A2E]/25 focus-visible:ring-2 focus-visible:ring-[#324A2E]/35 invalid:border-red-600 invalid:bg-red-50" name="password" type="password" autocomplete="new-password" minlength="8" required aria-describedby="password-hint">
+                    <p id="password-hint" class="mt-2 text-sm leading-5 text-[#6B6660]">Мінімум 8 символів.</p>
+                </div>
+
+                <div>
+                    <label class="mb-2 block text-sm font-semibold" for="registration-password-confirmation">Повторіть пароль</label>
+                    <input id="registration-password-confirmation" class="min-h-12 w-full rounded-xl border border-[#B69370]/30 bg-white px-4 text-base outline-none transition-all duration-200 hover:border-[#B69370] focus:border-[#324A2E] focus:ring-2 focus:ring-[#324A2E]/25 focus-visible:ring-2 focus-visible:ring-[#324A2E]/35 invalid:border-red-600 invalid:bg-red-50" name="password-confirmation" type="password" autocomplete="new-password" required>
+                </div>
+
+                <label class="flex cursor-pointer items-start gap-3 text-sm leading-6 text-[#6B6660]" for="registration-agreement">
+                    <input id="registration-agreement" class="mt-0.5 h-5 w-5 shrink-0 accent-[#324A2E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E] focus-visible:ring-offset-2" name="agreement" type="checkbox" required>
+                    <span>Я погоджуюся з <a class="font-semibold text-[#324A2E] underline decoration-[#B69370] underline-offset-4 transition-colors hover:text-[#3F5C3A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E]" href="#privacy">політикою конфіденційності</a>.</span>
+                </label>
+
+                <p id="registration-status" class="min-h-5 text-sm font-medium" role="status" aria-live="polite"></p>
+
+                <button class="inline-flex min-h-14 w-full items-center justify-center rounded-full bg-[#324A2E] px-6 py-3 text-sm font-semibold text-white transition-all duration-200 ease-out hover:bg-[#3F5C3A] hover:underline hover:underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E] focus-visible:ring-offset-2 focus-visible:ring-offset-[#FFFCF8] active:bg-[#253923] active:shadow-inner" type="submit">
+                    Зареєструватися
+                </button>
+            </form>
+        </div>
+    </dialog>
+
+    <dialog id="feedback-dialog" class="feedback-dialog" aria-labelledby="feedback-dialog-title" aria-describedby="feedback-dialog-description" aria-modal="true" role="dialog">
+        <div class="feedback-dialog-panel">
+            <div class="feedback-dialog-header">
+                <div id="feedback-form-heading">
+                    <p class="feedback-eyebrow">Зворотний зв’язок</p>
+                    <h2 id="feedback-dialog-title" class="feedback-dialog-title">Напишіть нам</h2>
+                </div>
+                <button class="feedback-dialog-close" type="button" data-close-feedback aria-label="Закрити форму зворотного зв’язку">
+                    <i data-lucide="x" class="h-5 w-5" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <div id="feedback-form-state">
+                <p id="feedback-dialog-description" class="feedback-dialog-description">
+                    Розкажіть, що вас цікавить, — відповімо протягом робочого дня.
+                </p>
+                <p id="feedback-form-instructions" class="feedback-form-instructions">
+                    Заповніть обов’язкові поля коректно, щоб активувати кнопку «Надіслати». Повідомлення необов’язкове.
+                </p>
+
+                <form id="feedback-dialog-form" class="feedback-form" novalidate>
+                <div>
+                    <label class="feedback-label" for="feedback-name">Ім’я</label>
+                    <input id="feedback-name" class="feedback-input" name="username" type="text" autocomplete="name" minlength="3" maxlength="80" required aria-describedby="feedback-name-hint feedback-name-error" aria-invalid="false" data-validation-field>
+                    <p id="feedback-name-hint" class="feedback-hint">Від 3 до 80 символів: літери, пробіли, апострофи та дефіси.</p>
+                    <p id="feedback-name-error" class="feedback-error" hidden>Введіть ПІБ щонайменше з 3 символів.</p>
+                </div>
+
+                <div class="feedback-contact-grid">
+                    <div>
+                        <label class="feedback-label" for="feedback-email">Email</label>
+                        <input id="feedback-email" class="feedback-input" name="email" type="email" autocomplete="email" minlength="5" maxlength="254" required aria-describedby="feedback-email-hint feedback-email-error" aria-invalid="false" data-validation-field>
+                        <p id="feedback-email-hint" class="feedback-hint">Від 5 до 254 символів у форматі name@example.com.</p>
+                        <p id="feedback-email-error" class="feedback-error" hidden>Введіть коректну email-адресу.</p>
+                    </div>
+
+                    <div>
+                        <label class="feedback-label" for="feedback-phone-digits">Телефон</label>
+                        <div id="feedback-phone-control" class="feedback-phone-control">
+                            <span class="feedback-phone-prefix" aria-hidden="true">+380</span>
+                            <input id="feedback-phone-digits" class="feedback-phone-input" name="phone-digits" type="tel" autocomplete="tel-national" inputmode="numeric" maxlength="9" required aria-describedby="feedback-phone-hint feedback-phone-digits-error" aria-invalid="false" data-validation-field data-visual-target="feedback-phone-control">
+                        </div>
+                        <input id="feedback-phone" name="phone" type="hidden" value="+380">
+                        <p id="feedback-phone-hint" class="feedback-hint">Префікс +380 уже додано. Введіть 9 цифр після нього.</p>
+                        <p id="feedback-phone-digits-error" class="feedback-error" hidden>Введіть 9 цифр після +380.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="feedback-label" for="feedback-subject">Тема звернення</label>
+                    <select id="feedback-subject" class="feedback-input" name="subject">
+                        <option value="coffee">Підібрати каву</option>
+                        <option value="order">Запитання про замовлення</option>
+                        <option value="gift">Подарунок</option>
+                        <option value="other">Інше</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="feedback-label" for="feedback-message">Повідомлення <span class="feedback-optional-label">(необов’язково)</span></label>
+                    <textarea id="feedback-message" class="feedback-input feedback-message-input" name="message" rows="6" minlength="10" maxlength="500" aria-describedby="feedback-message-hint feedback-message-error feedback-message-count" aria-invalid="false" data-validation-field></textarea>
+                    <p id="feedback-message-hint" class="feedback-hint">Необов’язкове. Якщо додаєте текст — від 10 до 500 символів.</p>
+                    <p id="feedback-message-error" class="feedback-error" hidden>Напишіть повідомлення мінімум із 10 символів.</p>
+                    <p id="feedback-message-count" class="feedback-count">0 / 500</p>
+                </div>
+
+                <div class="feedback-consent">
+                    <input id="feedback-agreement" class="feedback-checkbox" name="agreement" type="checkbox" value="accepted" required aria-describedby="feedback-agreement-error" aria-invalid="false" data-validation-field>
+                    <span><label class="feedback-consent-label" for="feedback-agreement">Я погоджуюся з</label> <a class="feedback-policy-link" href="#privacy">політикою конфіденційності</a>.</span>
+                </div>
+                <p id="feedback-agreement-error" class="feedback-error feedback-agreement-error" hidden>Потрібно погодитися з політикою конфіденційності.</p>
+
+                <p id="feedback-dialog-status" class="feedback-status" role="status" aria-atomic="true"></p>
+
+                <button id="feedback-submit" class="feedback-submit" type="submit" disabled aria-describedby="feedback-form-instructions">
+                    Надіслати
+                </button>
+                </form>
+            </div>
+
+            <section id="feedback-success-state" class="feedback-success" hidden>
+                <svg class="feedback-success-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                    <circle cx="32" cy="32" r="25" stroke="currentColor" stroke-width="3"></circle>
+                    <path d="m20 33 8 8 16-18" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <h2 id="feedback-success-title" class="feedback-success-title" tabindex="-1">
+                    Дякуємо за звернення!
+                </h2>
+                <p id="feedback-success-description" class="feedback-success-description">
+                    Форму успішно перевірено. Усі дані заповнені коректно.
+                </p>
+                <div class="feedback-success-actions">
+                    <button class="feedback-success-primary" type="button" data-feedback-return-home>
+                        Повернутися на головну
+                    </button>
+                    <button class="feedback-success-secondary" type="button" data-feedback-fill-again>
+                        Заповнити ще раз
+                    </button>
+                </div>
+            </section>
+        </div>
+    </dialog>
+
+    <script src="js/registration-modal.js" defer></script>
+    <script src="js/feedback-validation.js" defer></script>
+    <script src="js/feedback-modal.js" defer></script>
     <script>
         function scheduleWhenIdle(callback) {
             if ("requestIdleCallback" in window) {

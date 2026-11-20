@@ -148,6 +148,186 @@
         height: 100%;
         border: 0;
     }
+
+    /* Feedback dialog: semantic markup stays in index.html; visual styles live here. */
+    .feedback-dialog {
+        width: calc(100% - 2rem);
+        max-width: 46rem;
+        max-height: calc(100dvh - 2rem);
+        @apply m-auto overflow-y-auto rounded-[28px] border border-[#B69370]/30 bg-[#FFFCF8] p-0 text-[#25241F] shadow-2xl;
+    }
+
+    .feedback-dialog::backdrop {
+        background-color: rgb(37 36 31 / 0.5);
+        backdrop-filter: blur(4px);
+    }
+
+    .feedback-dialog-panel {
+        @apply p-5 sm:p-7 md:p-8;
+    }
+
+    .feedback-dialog-header {
+        @apply flex items-start justify-between gap-4;
+    }
+
+    .feedback-eyebrow {
+        @apply text-xs font-semibold uppercase tracking-[0.16em] text-[#6B6660];
+    }
+
+    .feedback-dialog-title,
+    .feedback-success-title {
+        @apply font-['Fraunces',serif] text-3xl font-semibold leading-tight tracking-[-0.02em] sm:text-4xl;
+    }
+
+    .feedback-dialog-title {
+        @apply mt-2;
+    }
+
+    .feedback-dialog-close {
+        @apply inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[#25241F] transition-colors duration-200 hover:bg-[#F5F0EB] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E] focus-visible:ring-offset-2;
+    }
+
+    .feedback-dialog-description {
+        @apply mt-4 max-w-2xl text-base leading-7 text-[#6B6660];
+    }
+
+    .feedback-form-instructions {
+        @apply mt-3 text-sm leading-6 text-[#6B6660];
+    }
+
+    .feedback-form {
+        @apply mt-6 grid grid-cols-1 gap-5;
+    }
+
+    .feedback-contact-grid {
+        @apply grid grid-cols-1 gap-5 md:grid-cols-2;
+    }
+
+    .feedback-label {
+        @apply mb-2 block text-sm font-semibold;
+    }
+
+    .feedback-optional-label {
+        @apply font-normal text-[#6B6660];
+    }
+
+    .feedback-input {
+        @apply min-h-12 w-full rounded-xl border border-[#806044] bg-white px-4 text-base outline-none transition-all duration-200 hover:border-[#4A3627] focus:border-[#324A2E] focus:ring-2 focus:ring-[#324A2E]/25 focus-visible:ring-2 focus-visible:ring-[#324A2E]/35;
+    }
+
+    .feedback-message-input {
+        @apply min-h-36 resize-y py-3 leading-relaxed;
+    }
+
+    .feedback-input[data-state="error"],
+    .feedback-phone-control[data-state="error"] {
+        @apply border-red-600 bg-red-50;
+    }
+
+    .feedback-input[data-state="success"],
+    .feedback-phone-control[data-state="success"] {
+        @apply border-[#3F5C3A] bg-[#F4F8F1];
+    }
+
+    .feedback-phone-control {
+        @apply flex min-h-12 overflow-hidden rounded-xl border border-[#806044] bg-white transition-all duration-200 hover:border-[#4A3627] focus-within:border-[#324A2E] focus-within:ring-2 focus-within:ring-[#324A2E]/25;
+    }
+
+    .feedback-phone-prefix {
+        @apply flex items-center border-r border-[#B69370]/20 bg-[#F5F0EB] px-4 text-base font-semibold text-[#4A3627];
+    }
+
+    .feedback-phone-input {
+        @apply min-w-0 flex-1 bg-transparent px-4 text-base outline-none;
+    }
+
+    .feedback-hint,
+    .feedback-count {
+        @apply mt-2 text-sm leading-5 text-[#6B6660];
+    }
+
+    .feedback-count {
+        @apply text-right;
+    }
+
+    .feedback-error {
+        @apply mt-2 text-sm font-medium text-red-700;
+    }
+
+    .feedback-agreement-error {
+        @apply -mt-3;
+    }
+
+    .feedback-consent {
+        @apply flex items-start gap-3 text-sm leading-6 text-[#6B6660];
+    }
+
+    .feedback-checkbox {
+        @apply mt-0.5 h-5 w-5 shrink-0 accent-[#324A2E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E] focus-visible:ring-offset-2;
+    }
+
+    .feedback-checkbox[data-state="error"] {
+        @apply ring-2 ring-red-600;
+    }
+
+    .feedback-checkbox[data-state="success"] {
+        @apply ring-2 ring-[#3F5C3A];
+    }
+
+    .feedback-consent-label {
+        @apply cursor-pointer;
+    }
+
+    .feedback-policy-link {
+        @apply font-semibold text-[#324A2E] underline decoration-[#B69370] underline-offset-4 transition-colors hover:text-[#3F5C3A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E] focus-visible:ring-offset-2;
+    }
+
+    .feedback-status {
+        @apply min-h-5 text-sm font-medium;
+    }
+
+    .feedback-submit,
+    .feedback-success-primary,
+    .feedback-success-secondary {
+        @apply inline-flex items-center justify-center rounded-full px-6 text-sm font-semibold transition-all duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#324A2E] focus-visible:ring-offset-2 focus-visible:ring-offset-[#FFFCF8];
+    }
+
+    .feedback-submit {
+        @apply min-h-14 w-full bg-[#324A2E] py-3 text-white hover:bg-[#3F5C3A] hover:underline hover:underline-offset-4 active:bg-[#253923] active:shadow-inner disabled:cursor-not-allowed disabled:bg-[#D8D3CB] disabled:text-[#6B6660] disabled:no-underline disabled:shadow-none;
+    }
+
+    .feedback-success {
+        @apply py-8 text-center sm:py-10;
+    }
+
+    .feedback-success-icon {
+        @apply mx-auto h-16 w-16 text-[#3F5C3A];
+    }
+
+    .feedback-success-title {
+        @apply mt-6;
+    }
+
+    .feedback-success-description {
+        @apply mx-auto mt-4 max-w-lg text-base leading-7 text-[#6B6660];
+    }
+
+    .feedback-success-actions {
+        @apply mt-8 flex flex-col justify-center gap-3 sm:flex-row;
+    }
+
+    .feedback-success-primary,
+    .feedback-success-secondary {
+        @apply min-h-12;
+    }
+
+    .feedback-success-primary {
+        @apply bg-[#324A2E] text-white hover:bg-[#3F5C3A] hover:underline hover:underline-offset-4 active:bg-[#253923] active:shadow-inner;
+    }
+
+    .feedback-success-secondary {
+        @apply border border-[#324A2E] text-[#324A2E] transition-colors hover:bg-[#324A2E] hover:text-white;
+    }
 }
 
 @media (min-width: 701px) {
